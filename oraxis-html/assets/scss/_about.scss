@@ -1,0 +1,474 @@
+.about-wrapper {
+    margin-top: 45px;
+
+    .about-left-items {
+        position: relative;
+
+        .dot-shape {
+            position: absolute;
+            bottom: 55px;
+            right: 20px;
+        }
+
+        .about-counter-items {
+            background-color: $theme-color;
+            padding: 50px 45px;
+            border-radius: 5px;
+            height: 100%;
+
+            @include breakpoint (max-sm){
+                padding: 30px;
+                text-align: center;
+            }
+
+            h2 {
+                color: $white;
+            }
+
+            h5 {
+                color: $white;
+                margin-top: 15px;
+            }
+        }
+
+        .about-image-1 {
+            img {
+                @include imgw;
+                border-radius: 5px;
+            }
+        }
+
+        .about-image-2 {
+            max-width: 480px;
+            height: 300px;
+            border-radius: 5px;
+            position: relative;
+
+            @include breakpoint (max-lg){
+                max-width: 800px;
+            }
+
+            .client-items {
+                padding: 12px 20px;
+                background-color: $white;
+                box-shadow: $shadow;
+                @include flex;
+                gap: 20px;
+                position: absolute;
+                top: 40px;
+                right: -90px;
+                border-radius: 5px;
+
+                .clinet-img {
+                    width: 63px;
+                    height: 63px;
+                    border-radius: 50%;
+                }
+
+                @include breakpoint (max-xl){
+                    right: -30px;
+                }
+
+                @include breakpoint (max-lg){
+                    right: 0;
+                }
+            }
+        }
+    }
+
+    .about-content {
+        margin-left: 40px;
+
+        @include breakpoint (max-lg){
+            margin-left: 0;
+        }
+
+        br {
+            @include breakpoint (max-xl){
+                display: none;
+            }
+        }
+
+        .about-button {
+            margin-top: 40px;
+
+            @include breakpoint (max-md){
+                margin-top: 30px;;
+            }
+
+            @include breakpoint (max-sm){
+                margin-top: 20px;;
+            }
+        }
+
+        &.style-3 {
+            .icon-items {
+                margin-top: 30px;
+                @include flex;
+                gap: 30px;
+
+                @include breakpoint (max-sm){
+                    flex-wrap: wrap;
+                    gap: 20px;
+                }
+
+                .icon {
+                    width: 100px;
+                    height: 100px;
+                    line-height: 100px;
+                    background-color: $bg-color-2;
+                    text-align: center;
+                }
+
+                .content {
+                    h3 {
+                        color: $white;
+                        margin-bottom: 5px;
+                    }
+
+                    p {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+
+    .about-image-2 {
+        img {
+            @include imgw;
+        }
+    }
+}
+
+.about-wrapper-2 {
+    position: relative;
+    z-index: 9;
+
+    .about-content {
+        p {
+            color: #ffffffb3;
+        }
+
+        .progress-wrap {
+            margin-top: 30px;
+            margin-bottom: 55px;
+
+            .pro-items {
+
+                &:not(:last-child){
+                    margin-bottom: 30px;
+                }
+                .pro-head {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 10px;
+
+                    .title {
+                        font-size: 12px;
+                        font-weight: 600;
+                        color: $white;
+                        letter-spacing: 2.4px;
+                    }
+                    
+                    .point {
+                        font-size: 12px;
+                        font-weight: 600;
+                        color: $white;
+                        letter-spacing: 2.4px;
+                    }
+                }
+                .progress {
+                    background: $bg-color;
+                    justify-content: flex-start;
+                    border-radius: 100px;
+                    align-items: center;
+                    position: relative;
+                    display: flex;
+                    height: 10px;
+                    width: 100%;
+                    border-radius: 0;
+                }
+                
+                .progress-value {
+                    animation: load 3s normal forwards;
+                    border-radius: 0;
+                    background: $theme-color;
+                    height: 10px;
+                    width: 0;
+                    border-radius: 0;
+                }
+                .style-two{
+                    animation: load2 3s normal forwards;
+                }
+                @keyframes load {
+                    0% { width: 0; }
+                    100% { width: 75%; }
+                }
+                @keyframes load2 {
+                    0% { width: 0; }
+                    100% { width: 55%; }
+                }
+            }
+        }
+    }
+
+    .about-image {
+        max-width: 510px;
+        height: 539px;
+        border-radius: 5px;
+        margin-left: 100px;
+        position: relative;
+        margin-bottom: 10px;
+
+        @include breakpoint (max-xl){
+          margin-left: 55px;
+        }
+
+        @include breakpoint (max-lg){
+            margin-left: 0;
+            max-width: 730px;
+        }
+
+        @include breakpoint (max-md){
+           margin-bottom: 0;
+        }
+
+        @include breakpoint (max-md){
+            height: 500px;
+        }
+
+        @include breakpoint (max-sm){
+            height: 450px;
+        }
+        
+
+        &::before {
+            position: absolute;
+            top: 20%;
+            right: -10px;
+            content: "";
+            height: 440px;
+            width: 411px;
+            background-color: $theme-color;
+            z-index: -1;
+            border-radius: 5px;
+
+            @include breakpoint (max-md){
+              display: none;
+            }
+        }
+
+        .counter-shape {
+            position: absolute;
+            bottom: 40px;
+            left: -14%;
+            padding: 25px;
+            background-color: $bg-color-2;
+            display: inline-block;
+            color: #ffffffb3;
+            border-radius: 5px;
+            border: 1px solid $theme-color;
+
+            h3 {
+                font-size: 28px;
+                color: #ffffffb3;
+                margin-bottom: 5px;
+            }
+
+            @include breakpoint (max-lg){
+               left: 0;
+               bottom: 0;
+            }
+        }
+
+        .line-shape {
+            position: absolute;
+            bottom: 30%;
+            left: -7%;
+
+            @include breakpoint (max-lg){
+                left: 40px;
+                bottom: 123px;
+            }
+        }
+    }
+}
+
+.about-wrapper-3 {
+    .about-image {
+        img {
+            @include imgw;
+        }
+    }
+
+    .about-content {
+        margin-left: 40px;
+
+        @include breakpoint (max-xxl){
+            margin-left: 15px;
+
+            br {
+                display: none;
+            }
+        }
+
+        @include breakpoint (max-lg){
+            margin-left: 0;
+        }
+
+        .about-list {
+            @include flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 20px;
+
+            @include breakpoint (max-md){
+                margin-top: 20px;
+                margin-bottom: 30px;
+            }
+
+            @include breakpoint (max-sm){
+                margin-top: 15px;
+                margin-bottom: 25px;
+            }
+
+            ul {
+                li {
+                    &:not(:last-child){
+                        margin-bottom: 15px;
+                    }
+
+                    i {
+                        color: $theme-color;
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    &.style-2 {
+        .about-image-items {
+            .about-image-1 {
+                max-width: 490px;
+                height: 465px;
+                border-radius: 5px;
+                margin-left: 100px;
+                position: relative;
+
+                @include breakpoint (max-lg){
+                    margin-left: 0;
+                }
+
+                @include breakpoint (max-sm){
+                   height: 450px;
+                   max-width: 550px;
+                }
+
+                &::before {
+                    position: absolute;
+                    top: 0;
+                    left: -30px;
+                    content: "";
+                    height: 100%;
+                    width: 15px;
+                    border-radius: 5px;
+                    background-color: $theme-color;
+                }
+
+                .about-image-2 {
+                    position: absolute;
+                    bottom: -65px;
+                    left: -100px;
+                    max-width: 300px;
+
+                    @include breakpoint (max-lg){
+                        left: 0;
+                        bottom: 0;
+                    }
+
+                    @include breakpoint (max-md){
+                       max-width: 250px;
+                    }
+
+                    @include breakpoint (max-sm){
+                        max-width: 200px;
+                    }
+
+                    img {
+                        @include imgw;
+                        border-radius: 5px;
+                    }
+                }
+            }
+        }
+
+        .about-content {
+            margin-left: 20px;
+            
+            .progress-wrap {
+                margin-bottom: 55px;
+                margin-top: 30px;
+                .pro-items {
+    
+                    &:not(:last-child){
+                        margin-bottom: 30px;
+                    }
+                    .pro-head {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        margin-bottom: 10px;
+    
+                        .title {
+                            font-size: 16px;
+                            font-weight: 500;
+                            color: $black;
+                        }
+                        
+                        .point {
+                            font-size: 16px;
+                            font-weight: 500;
+                            color: $theme-color;
+                        }
+                    }
+                    .progress {
+                        background: $white;
+                        justify-content: flex-start;
+                        border-radius: 5px;
+                        align-items: center;
+                        position: relative;
+                        display: flex;
+                        height: 6px;
+                        width: 100%;
+                        border-radius: 5px;
+                    }
+                    
+                    .progress-value {
+                        animation: load 3s normal forwards;
+                        border-radius: 0;
+                        background: $theme-color;
+                        height: 6px;
+                        width: 0;
+                        border-radius: 5px;
+                    }
+                    .style-two{
+                        animation: load2 3s normal forwards;
+                    }
+                    @keyframes load {
+                        0% { width: 0; }
+                        100% { width: 70%; }
+                    }
+                    @keyframes load2 {
+                        0% { width: 0; }
+                        100% { width: 85%; }
+                    }
+                }
+            }
+        }
+    }
+}
