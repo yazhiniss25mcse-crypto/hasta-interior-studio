@@ -7,9 +7,8 @@ Theme Name: Oraxis – Hasta Interior Studio
    ============================================= */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
 
-*,
-*::before,
-*::after {
+/* Apply Poppins ONLY to actual elements — NOT ::before/::after (those are icon glyphs) */
+* {
     font-family: 'Poppins', sans-serif !important;
 }
 
@@ -173,3 +172,56 @@ All the SCSS File in SCSS Folder of Assets Folder. You can read the doc file als
     width: auto !important;
 }
 
+/* =============================================
+   ICON FONT OVERRIDES
+   Must come LAST to beat the * { Poppins !important } rule above.
+   ============================================= */
+
+/* Font Awesome 6 Free — Solid (.fas / .fa) */
+.fas, .fa {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+    font-style: normal !important;
+}
+.fas::before, .fa::before {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+}
+
+/* Font Awesome 6 Free — Regular (.far) */
+.far {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+}
+.far::before {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 400 !important;
+}
+
+/* Font Awesome 6 Brands (.fab) */
+.fab {
+    font-family: "Font Awesome 6 Brands" !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+}
+.fab::before {
+    font-family: "Font Awesome 6 Brands" !important;
+    font-weight: 400 !important;
+}
+
+/* Flaticon custom icon set */
+i[class^="flaticon-"],
+i[class*=" flaticon-"],
+span[class^="flaticon-"],
+span[class*=" flaticon-"] {
+    font-family: "flaticon" !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+}
+i[class^="flaticon-"]::before,
+i[class*=" flaticon-"]::before,
+span[class^="flaticon-"]::before,
+span[class*=" flaticon-"]::before {
+    font-family: "flaticon" !important;
+}

@@ -502,7 +502,7 @@ input.main-search-input::placeholder {
 
 .scroll-up::after {
   position: absolute;
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 6 Free";
   content: "\f176";
   text-align: center;
   line-height: 50px;
@@ -1263,7 +1263,7 @@ input.main-search-input::placeholder {
 .header-1 .mega-menu-wrapper .header-main .header-right .menu-cart .cart-box ul li a::after {
   position: absolute;
   content: "\f00d";
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 6 Free";
   font-weight: 600;
   top: 15px;
   right: -88px;
@@ -5906,7 +5906,7 @@ input.main-search-input::placeholder {
 }
 .faq-wrapper .accordion-item .accordion-header .accordion-button::after {
   content: "\f324";
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 6 Free";
   background: transparent;
   font-weight: 500;
   transition: all 0.3s ease-in-out !important;
@@ -5915,7 +5915,7 @@ input.main-search-input::placeholder {
 }
 .faq-wrapper .accordion-item .accordion-header .accordion-button:not(.collapsed)::after {
   content: "\f325";
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 6 Free";
   background: transparent;
   font-weight: 500;
   color: var(--white);
@@ -7402,7 +7402,7 @@ input.main-search-input::placeholder {
   right: 30px;
   font-size: 110px;
   line-height: 1;
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 6 Free";
   position: absolute;
   content: "\f10d";
   bottom: -20px;
@@ -7617,7 +7617,7 @@ input.main-search-input::placeholder {
   position: absolute;
   left: 0;
   top: 0;
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 6 Free";
   content: "\f00c";
   color: var(--theme);
 }
