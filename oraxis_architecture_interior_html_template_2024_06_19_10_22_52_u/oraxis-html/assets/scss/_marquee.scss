@@ -1,0 +1,107 @@
+.marque-section {
+    position: relative;
+
+    .line-area {
+        @include breakpoint (max-xl){
+            display: none;
+        }
+        
+        span {
+            position: absolute;
+            content: "";
+            width: 1px;
+            height: 100%;
+            top: 0;
+            left: 26%;
+            background-color: #efefef;
+            z-index: -1;
+            
+            &:nth-child(2) {
+                left: 50%;
+              }
+      
+              &:nth-child(3) {
+                left: 80%;
+              }
+        }
+    }
+}
+.marquee-wrapper {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-bottom: 45px;
+    margin-top: -2px;
+
+    @include breakpoint (max-sm){
+        margin-top: -25px;
+    }
+
+    &.style-2 {
+        line-height: 40px;
+
+        .text-slider {
+            font-size: 24px;
+            color: $header-color;
+            margin-right: 40px;
+        }
+    }
+}
+
+.text-slider {
+    font-size: 120px;
+    height: 100px;
+    line-height: 90px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-right: 20px;
+    color: #e1e1de;
+
+    @include breakpoint(max-sm){
+        font-size: 50px;
+        height: 70px;
+        line-height: 65px;
+    }
+}
+
+.marquee-inner {
+    position: absolute;
+    display: inline-flex;
+    width: 200%;
+}
+
+.marquee-list {
+    float: left;
+    width: 50%;
+}
+
+.marquee-item {
+    float: left;
+    transition: animation 0.2s ease-out;
+}
+
+.marquee-inner.to-left {
+    animation: marqueeLeft 25s linear infinite;
+}
+
+@keyframes marqueeLeft {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: -100%;
+    }
+}
+
+.marquee-inner.to-right {
+    animation: marqueeRight 25s linear infinite;
+}
+
+@keyframes marqueeRight {
+    0% {
+       right : 0;
+    }
+    100% {
+        right: -100%;
+    }
+}

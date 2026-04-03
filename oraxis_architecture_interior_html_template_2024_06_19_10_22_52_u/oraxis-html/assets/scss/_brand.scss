@@ -1,0 +1,9 @@
+.brand-wrapper {
+    .brand-image {
+        text-align: center;
+    }
+
+    &.style-2 {
+        border-bottom: 1px solid $text-color;
+    }
+}

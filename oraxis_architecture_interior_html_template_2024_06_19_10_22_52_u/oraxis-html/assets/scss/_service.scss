@@ -1,0 +1,577 @@
+.service-section {
+    position: relative;
+
+    .bg-shape {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        img {
+            @include imgw;
+        }
+    }
+}
+
+.service-items {
+    position: relative;
+    z-index: 9;
+    padding: 30px;
+
+    @include breakpoint (max-lg){
+        margin-top: 0 !important;
+    }
+
+    &::before {
+        @include before;
+        background-color: $white;
+        border-radius: 5px;
+        z-index: -1;
+        height: initial;
+        top: 23%;
+    }
+
+    .icon {
+        width: 65px;
+        height: 65px;
+        line-height: 75px;
+        border-radius: 5px;
+        text-align: center;
+        background-color: $theme-color;
+        color: $white;
+        font-size: 40px;
+        color: $white;
+    }
+
+    .content {
+        margin-top: 20px;
+
+        h3 {
+            margin-bottom: 10px;
+
+            a {
+                &:hover {
+                    color: $theme-color;
+                }
+            }
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+    }
+
+    &.style-2 {
+        margin-top: -30px !important;
+
+        &::before {
+            background-color: $bg-color;
+        }
+    }
+}
+
+.service-wrapper {
+
+    .service-image {
+        max-width: 615px;
+        height: 740px;
+        margin-right: -100%;
+        margin-top: -120px;
+        margin-bottom: -120px;
+
+        @include breakpoint (max-xl){
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-right: 0;
+        }
+
+        @include breakpoint (max-lg){
+            height: 600px;
+        }
+
+        @include breakpoint (max-md){
+            height: 500px;
+        }
+
+        @include breakpoint (max-sm){
+            height: 430px;
+        }
+    }
+}
+
+.service-box-items {
+    margin-top: 30px;
+    background-color: $bg-color-2;
+    padding: 40px;
+    border-radius: 5px;
+
+    @include breakpoint (max-sm){
+        padding: 30px 25px;
+    }
+
+    .icon {
+        font-size: 55px;
+        color: $theme-color;
+    }
+
+    .content {
+        margin-top: 30px;
+
+        @include breakpoint (max-sm){
+            margin-top: 20px;
+        }
+
+        h3 {
+            margin-bottom: 15px;
+
+            a {
+                color: $white;
+
+                &:hover {
+                    color: $theme-color;
+                }
+            }
+        }
+
+        p {
+            color: #ffffffb3;
+        }
+
+        ul {
+            margin-top: 20px;
+
+            li {
+                color: #ffffffb3;
+
+                i {
+                    color: $text-color;
+                    margin-right: 5px;
+                }
+
+                &:not(:last-child){
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+        .link-btn {
+            color: $white;
+            margin-top: 30px;
+
+            i {
+                color: $theme-color;
+            }
+
+            &:hover {
+                color: $theme-color;
+            }
+        }
+    }
+
+    &.style-2 {
+        padding: 40px 30px;
+        border: 1px solid transparent;
+        @include transition;
+
+        @include breakpoint (max-md){
+            padding: 30px;
+        }
+
+        @include breakpoint (max-sm){
+            padding: 25px 20px;
+        }
+
+        .icon {
+            font-size: 45px;
+        }
+
+        .content {
+            h4 {
+                margin-bottom: 20px;
+
+                @include breakpoint (max-sm){
+                   margin-bottom: 15px;
+                }
+
+                a {
+                    color: $white;
+    
+                    &:hover {
+                        color: $theme-color;
+                    }
+                }
+            }
+
+            .link-btn {
+                margin-top: 20px;
+                color: $theme-color;
+
+                @include breakpoint (max-sm){
+                    margin-top: 15px;
+                }
+            }
+        }
+
+        &:hover {
+            border: 1px solid $theme-color;
+        }
+
+        &.active {
+            border: 1px solid $theme-color;
+        }
+    }
+
+    &.style-3 {
+        background-color: transparent;
+        border: 1px solid $bg-color-2;
+        @include transition;
+        border-radius: 0;
+
+        .icon {
+            color: $theme-color;
+            font-size: 48px;
+        }
+
+        .content {
+            h3 {
+                border-bottom: 2px solid rgba(255, 255, 255, .1);
+                padding-bottom: 20px;
+                margin-bottom: 0;
+            }
+
+            p {
+                color: $white;
+                padding-top: 20px;
+            }
+        }
+
+        &:hover {
+            background-color: $bg-color-2;
+            border-bottom: 3px solid $theme-color;
+        }
+
+        &.active {
+            background-color: $bg-color-2;
+            border-bottom: 3px solid $theme-color;
+        }
+    }
+}
+
+.service-section-2 {
+    .section-title-area {
+        @include breakpoint (max-xxl){
+            flex-wrap: wrap;
+        }
+    }
+}
+
+.service-section-3 {
+    position: relative;
+
+    .bg-shape {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        img {
+            @include imgw;
+        }
+    }
+}
+
+.service-box-items-2 {
+    margin-top: 30px;
+    padding: 40px;
+    background-color: $bg-color-2;
+    position: relative;
+    z-index: 9;
+
+    @include breakpoint (max-md){
+        padding: 30px 35px;
+    }
+
+    @include breakpoint (max-md){
+        padding: 25px 20px;
+    }
+
+    .icon {
+        color: $theme-color;
+        font-size: 45px;
+    }
+
+    .content {
+        margin-top: 30px;
+
+        @include breakpoint (max-sm){
+            margin-top: 20px;
+        }
+
+        h3 {
+            a {
+                color: $white;
+
+                &:hover {
+                    color: $theme-color;
+                }
+            }
+        }
+
+        p {
+            color: $white;
+            margin-top: 15px;
+
+            @include breakpoint (max-sm){
+               margin-top: 10px;
+            }
+        }
+    }
+}
+
+.service-wrapper-2 {
+    .main-service-items {
+        .theme-btn {
+            opacity: 0;
+            visibility: hidden;
+            @include transition;
+        }
+
+        &:hover {
+            .theme-btn {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
+    .theme-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.service-details-wrapper {
+    .service-details-items {
+        .service-image {
+            img {
+                @include imgw;
+                border-radius: 5px;
+            }
+        }
+
+        .details-content {
+            margin-top: 30px;
+
+            h3 {
+                font-size: 28px;
+            }
+
+            .list {
+                margin-top: 30px;
+                margin-bottom: 40px;
+
+                li {
+                    position: relative;
+                    padding-left: 25px;
+
+                    &::before {
+                        position: absolute;
+                        top: 10px;
+                        left: 0;
+                        width: 6px;
+                        height: 6px;
+                        border-radius: 6px;
+                        content: "";
+                        background-color: $theme-color;
+                    }
+
+                    &:not(:last-child){
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+
+            h4 {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+
+            .list-items {
+                margin-top: 40px;
+                @include flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 30px;
+
+                .d-list {
+                    li {
+                        i {
+                            color: $theme-color;
+                            margin-right: 5px;
+                        }
+
+                        &:not(:last-child){
+                            margin-bottom: 15px;
+                        }
+                    }
+                }
+
+                .icon-box {
+                    padding: 30px 30px;
+                    text-align: center;
+                    background-color: $bg-color;
+
+                    i {
+                        font-size: 40px;
+                        color: $theme-color;
+                        margin-bottom: 20px;
+                    }
+
+                    h4 {
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    .main-sidebar {
+        .single-sidebar-widget {
+            margin-bottom: 40px;
+
+            .widget-categories {
+                ul {
+                    li {
+                        padding: 18px 30px;
+                        background-color: $bg-color;
+                        font-size: 20px;
+                        font-weight: 600;
+                        color: $header-color;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        @include transition;
+
+                        @include breakpoint (max-xl){
+                            font-size: 16px;
+                        }
+
+                        @include breakpoint (max-lg){
+                            font-size: 18px;
+                        }
+
+                        i {
+                            font-size: 22px;
+                            color: $theme-color;
+                            @include transition;
+                        }
+
+                        &:not(:last-child){
+                            margin-bottom: 20px;
+                        }
+
+                        &:hover {
+                            background-color: $theme-color;
+                            color: $white;
+
+                            i {
+                                color: $white;
+                            }
+
+                            a {
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .bg-image {
+            max-width: 500px;
+            position: relative;
+    
+            @include breakpoint (max-lg){
+                max-width: 800px;
+            }
+    
+            &::before {
+                @include before;
+                background-color: $black;
+                opacity: 0.7;
+                border-radius: 5px;
+            }
+    
+            .contact-text {
+                position: relative;
+                text-align: center;
+                padding: 40px 35px;
+                margin: 0 auto;
+    
+                .icon {
+                    width: 48px;
+                    height: 48px;
+                    line-height: 48px;
+                    text-align: center;
+                    background-color: $theme-color;
+                    text-align: center;
+                    color: $white;
+                    border-radius: 50%;
+                    margin: 0 auto 20px;
+                    position: relative;
+                }
+
+                p {
+                    color: $white;
+                }
+
+                h3 {
+                    margin-top: 15px;
+                    a {
+                        color: $white;
+                    }
+                }
+            }
+        }
+
+        .download-service-doc {
+            .theme-btn {
+                font-size: 22px;
+                font-weight: 600;
+
+                @include breakpoint (max-xl){
+                    font-size: 16px;
+                    padding: 22px 20px;
+                }
+
+                @include breakpoint (max-lg){
+                    font-size: 18px;
+                }
+
+                &.style-2 {
+                    text-align: left;
+                    background-color: $bg-color;
+                    color: $header-color;
+
+                    i {
+                        font-size: 24px;
+                        margin-right: 15px;
+
+                        @include breakpoint (max-xl){
+                            font-size: 16px;
+                        }
+
+                        @include breakpoint (max-lg){
+                            font-size: 18px;
+                        }
+                    }
+
+                    &::before,&::after {
+                        background-color: $theme-color;
+                    }
+
+                    &:hover {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}

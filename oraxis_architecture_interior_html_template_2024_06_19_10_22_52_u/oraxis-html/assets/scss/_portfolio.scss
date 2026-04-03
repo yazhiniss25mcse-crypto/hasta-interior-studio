@@ -1,0 +1,439 @@
+.portfolio-wrapper {
+    margin-right: -35%;
+
+    @include breakpoint (max-xl){
+        margin-right: 0;
+    }
+
+    &.style-2 {
+        margin-right: 0;
+        padding: 0 95px;
+
+        @include breakpoint (max-xxl){
+            padding: 0;
+        }
+
+        .portfolio-items {
+            margin-top: 0;
+
+            .portfolio-image {
+        
+                @include breakpoint (max-md){
+                    max-width: 700px;
+                }
+            }
+        }
+    }
+}
+
+.portfolio-items {
+    margin-top: 30px;
+    position: relative;
+
+    &::before {
+        @include before;
+        background-color: $black;
+        z-index: 1;
+        top: 20px;
+        width: 90%;
+        height: 93%;
+        left: 20px;
+        opacity: 0;
+        visibility: hidden;
+        @include transition;
+
+        @include breakpoint (max-xxl){
+            top: 0;
+            width: 100%;
+            height: 100%;
+            left: 0;
+        }
+    }
+
+    .portfolio-image {
+        max-width: 410px;
+        height: 534px;
+        border-radius: 5px;
+        position: relative;
+
+        @include breakpoint (max-xxl){
+            max-width: 550px;
+        }
+
+        @include breakpoint (max-xl){
+            margin-right: 0;
+        }
+
+        @include breakpoint (max-md){
+           height: 500px;
+        }
+
+        @include breakpoint (max-sm){
+            max-width: 550px;
+        }
+    
+        .portfolio-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 100%;
+            text-align: center;
+            z-index: 9;
+            opacity: 0;
+            visibility: hidden;
+            @include transition;
+
+            br {
+                @include breakpoint (max-lg){
+                    display: block;
+                }
+            }
+
+            .icon {
+                width: 55px;
+                height: 55px;
+                line-height: 55px;
+                border-radius: 50%;
+                text-align: center;
+                background-color: $theme-color;
+                color: $white;
+                display: inline-block;
+                @include transition;
+                margin-bottom: 30px;
+
+                &:hover {
+                    background-color: $white;
+                    color: $theme-color;
+                }
+            }
+
+            h3 {
+                margin-bottom: 10px;
+
+                a {
+                    color: $white;
+
+                    &:hover {
+                        color: $theme-color;
+                    }
+                }
+            }
+
+            p {
+                color: $white;
+            }
+        }
+    }
+
+    &:hover {
+        &::before {
+            opacity: .8;
+            visibility: visible;
+        }
+
+        .portfolio-image {
+            .portfolio-content {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+}
+
+.portfolio-wrapper-2 {
+    margin-bottom: 30px;
+
+    .portfolio-content {
+        @include flex;
+        gap: 110px;
+        border-top: 1px solid  rgba(255, 255, 255, .2);
+        padding: 40px 0;
+
+        @include breakpoint (max-md){
+           gap: 90px;
+           padding: 30px 0;
+        }
+
+        @include breakpoint (max-sm){
+            gap: 70px;
+            padding: 25px 0;
+         }
+
+        &:last-child{
+            border-bottom: 1px solid  rgba(255, 255, 255, .2);
+        }
+
+        .content {
+            position: relative;
+            overflow: hidden;
+
+            &::before {
+                position: absolute;
+                top: 6px;
+                left: 0px;
+                content: "";
+                width: 90px;
+                height: 16px;
+                background-size: cover;
+                background-image: url(../../assets/img/arrow.svg);
+                left: -100px;
+                opacity: 0;
+                visibility: hidden;
+                @include transition;
+            }
+            
+            p {
+                color: $theme-color;
+                @include transition;
+            }
+        }
+
+        h3 {
+            a {
+                color: $white;
+
+                &:hover {
+                    color: $theme-color;
+                }
+            }
+        }
+
+        &:hover {
+            .content {
+                &::before {
+                    opacity: 1;
+                    visibility: visible;
+                    left: 0;
+                }
+
+                p {
+                    padding-left: 110px;
+                }
+            }
+        }
+    }
+
+    .portfolio-image {
+        margin-left: 100px;
+        position: relative;
+        z-index: 9;
+
+        @include breakpoint (max-xxl){
+           margin-left: 50px;
+        }
+
+        @include breakpoint (max-xl){
+           margin-left: 0;
+        }
+
+        img {
+            @include imgw;
+            border-radius: 5px;
+        }
+
+        &::before {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            content: "";
+            width: 535px;
+            height: 410px;
+            border-radius: 5px;
+            background-color: $theme-color;
+            transform: rotate(-15deg);
+            z-index: -1;
+            opacity: 0.5;
+
+            @include breakpoint (max-xxl){
+               width: 495px;
+            }
+
+            @include breakpoint (max-xl){
+               display: none;
+            }
+        }
+    }
+}
+
+.portfolio-wrapper-3 {
+    @include breakpoint (max-md){
+        margin-top: -20px;
+    }
+
+    .portfolio-content {
+        margin-left: 33px;
+
+        @include breakpoint (max-xl){
+            margin-left: 0;
+            
+            br {
+                display: block;
+            }
+        }
+
+        @include breakpoint (max-sm){
+           text-align: center;
+        }
+
+        h6 {
+            font-size: 18px;
+            font-weight: 600;
+            color: $theme-color;
+            display: inline-block;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        h3 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 15px;
+
+            @include breakpoint (max-lg){
+                font-size: 26px;
+            }
+
+            @include breakpoint (max-md){
+                font-size: 24px;
+            }
+
+            @include breakpoint (max-sm){
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+
+           a {
+                &:hover {
+                    color: $theme-color;
+                }
+           }
+        }
+
+        p {
+            margin-bottom: 35px;
+
+            @include breakpoint (max-md){
+                margin-bottom: 25px;
+            }
+        }
+
+        ul {
+            margin-bottom: 35px;
+            margin-top: -10px;
+
+            li {
+                i {
+                    color: $theme-color;
+                    margin-right: 5px;
+                }
+
+                &:not(:last-child){
+                    margin-bottom: 15px;
+                }
+            }
+        }
+
+        .counter-item {
+            display: inline-flex;
+            gap: 20px;
+            padding: 20px;
+            background-color: #C1995B;
+
+            h2 {
+                font-size: 48px;
+
+                span {
+                    font-size: 48px;
+                    color: $white;
+                    font-weight: 700;
+                    margin-bottom: 0;
+                }
+            }
+
+            p {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .project-image {
+        margin-left: 33px;
+
+        @include breakpoint (max-xl){
+            margin-left: 0;
+        }
+        
+        img {
+            @include imgw;
+            border-radius: 5px;
+        }
+    }
+}
+
+.portfolio-section-2 {
+    .swiper-slide.swiper-slide-active{
+        .portfolio-single-items  {
+            .portfolio-image {
+                .portfolio-content {
+                    opacity: 1;
+                    visibility: visible;
+                    bottom: 20px;
+                }
+            }
+        }
+    }
+}
+
+.portfolio-single-items {
+    margin-top: 30px;
+    overflow: hidden;
+
+    .portfolio-image {
+        height: 402px;
+        @include transition;
+        position: relative;
+
+        .portfolio-content {
+            position: absolute;
+            bottom: 0;
+            left: 20px;
+            right: 20px;
+            padding: 30px;
+            background-color: $black;
+            bottom: -150px;
+            opacity: 0;
+            @include transition;
+
+            h3 {
+                margin-bottom: 10px;
+
+                a {
+                    color: $white;
+
+                    &:hover {
+                        color: $theme-color;
+                    }
+                }
+            }
+
+            p {
+                color: $white;
+            }
+        }
+    }
+
+    &:hover {
+        .portfolio-image {
+            // height: 512px;
+
+            .portfolio-content {
+                opacity: 1;
+                visibility: visible;
+                bottom: 20px;
+            }
+        }
+    }
+}
