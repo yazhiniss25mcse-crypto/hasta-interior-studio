@@ -1,0 +1,424 @@
+.cta-banner-section {
+    position: relative;
+    z-index: 9;
+
+    &::before {
+        @include before;
+        background-color: $bg-color;
+        z-index: -1;
+        height: 50%;
+    }
+}
+
+.cta-banner-wrapper {
+    background-color: $black;
+    padding: 60px 120px;
+    @include flex;
+    gap: 110px;
+    border-radius: 5px;
+
+    @include breakpoint (max-lg){
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    @include breakpoint (max-md){
+        gap: 30px;
+        padding: 50px 40px;
+    }
+
+    @include breakpoint (max-sm){
+        padding: 40px;
+        text-align: center;
+    }
+
+    .icon {
+        position: relative;
+        z-index: 9;
+
+        @include breakpoint (max-sm){
+            margin: 0px auto;
+        }
+
+        &::before {
+            position: absolute;
+            top: -120%;
+            left: -12px;
+            content: "";
+            width: 180px;
+            height: 390px;
+            background-image: linear-gradient(180deg, #A6A182 0%, rgba(166, 161, 130, 0) 100%);
+            z-index: -1;
+            transform: rotate(15deg);
+            bottom: 0;
+
+            @include breakpoint (max-xxl){
+                display: none;
+            }
+        }
+    }
+
+    .content {
+        h2 {
+            color: $white;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #ffffffb3;
+        }
+    }
+
+    .newsletter-items {
+        margin-top: 40px;
+        @include flex;
+        gap: 20px;
+
+        @include breakpoint (max-xxl){
+            flex-wrap: wrap;
+            text-align: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .form-clt {
+            flex-basis: 60%;
+
+            @include breakpoint (max-xl){
+                flex-basis: 100%;
+            }
+
+           input {
+                position: relative;
+                padding: 18px 30px;
+                border: none;
+                outline: none;
+                background-color: transparent;
+                border: 1px solid $white;
+                width: 100%;
+                font-size: 16px;
+                color: $white;
+                border-radius: 5px;
+
+                @include breakpoint (max-md){
+                    padding: 14px 30px;
+                }
+
+                @include breakpoint (max-sm){
+                    padding: 14px 25px;
+                }
+
+                &::placeholder {
+                    color: $white;
+                }
+           }
+        }
+
+        .theme-btn {
+            padding: 25px 30px;
+
+            @include breakpoint (max-xl){
+                width: 100%;
+            }
+
+            @include breakpoint (max-md){
+                width: 100%;
+                padding: 20px 30px;
+            }
+
+            @include breakpoint (max-sm){
+                padding: 18px 25px;
+            }
+        }
+    }
+
+    &.style-2 {
+        gap: 0;
+        justify-content: space-between;
+        padding: 60px 80px;
+        background-color: $theme-color;
+        border-radius: 0;
+
+        @include breakpoint (max-xl){
+           gap: 30px;
+        }
+
+        @include breakpoint (max-lg){
+            gap: 0;
+       }
+
+        @include breakpoint (max-md){
+            padding: 50px 40px;
+        }
+
+        @include breakpoint (max-sm){
+            padding: 40px 30px;
+        }
+
+        .newsletter-items {
+            flex-basis: 70%;
+
+            @include breakpoint (max-xxl){
+                flex-basis: 100%;
+                flex-wrap: initial;
+            }
+
+            @include breakpoint (max-xl){
+                flex-wrap: wrap;
+            }
+
+            .form-clt {
+                flex-basis: 65%;
+
+                @include breakpoint (max-xxl){
+                    flex-basis: 50%;
+                }
+
+                 @include breakpoint (max-xl){
+                    flex-basis: 100%;
+                }
+            }
+        }
+    }
+
+    &.style-3 {
+        background-color: transparent;
+        border-radius: 0;
+        display: initial;
+        position: relative;
+        z-index: 9;
+
+        .cta-shape {
+            position: absolute;
+            bottom: 0;
+            left: -20px;
+            z-index: -1;
+
+            @include breakpoint (max-xxl){
+                bottom: -315px;
+            }
+
+            @include breakpoint (max-xl){
+                display: none
+            }
+        }
+
+
+        .cta-img-2 {
+            img {
+                @include imgw;
+            }
+        }
+
+        .content {
+            position: relative;
+
+            .arrow-shape {
+                position: absolute;
+                right: 15%;
+                top: 30%;
+
+                @include breakpoint (max-xl){
+                    display: none
+                }
+            }
+
+            .newsletter-items {
+                .form-clt {
+                    @include breakpoint (max-xxl){
+                        flex-basis: 74%;
+                    }
+
+                    @include breakpoint (max-xl){
+                        flex-basis: 100%;
+                    }
+
+                    input {
+                        background: rgba(255, 255, 255, 0.1) !important;
+                        border: none;
+                        border-radius: 0;
+                    }
+                }
+
+                .theme-btn {
+                    border-radius: 0;
+
+                    &::before,&::after {
+                        border-radius: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.cta-banner-wrapper-2 {
+    background-color: $theme-color;
+    border-radius: 5px;
+    padding: 75px 60px;
+    position: relative;
+    margin-top: 70px;
+
+    @include breakpoint (max-xxl){
+        margin-top: -30px;
+    }
+
+    @include breakpoint (max-md){
+       padding: 50px 40px;
+    }
+
+    @include breakpoint (max-sm){
+        padding: 40px 30px;
+    }
+
+    .cta-image {
+        position: absolute;
+        bottom: 0;
+        left: 30px;
+        z-index: 9;
+
+        @include breakpoint (max-xxl){
+            display: none;
+        }
+
+        .circle-shape {
+            position: absolute;
+            bottom: 0;
+            left: -30px;
+            z-index: -1;
+        }
+    }
+
+    .section-title-area {
+        margin-left: 350px;
+
+        @include breakpoint (max-xxl){
+            margin-left: 0;
+        }
+
+        @include breakpoint (max-lg){
+           flex-wrap: wrap;
+           justify-content: center;
+           text-align: center;
+           gap: 30px;
+        }
+    }
+}
+
+.cta-banner-section-2 {
+    position: relative;
+
+    &::before {
+        @include before;
+        background-color: $bg-color-2;
+        top: 50%;
+    }
+}
+
+.cta-banner-section-3 {
+    position: relative;
+    z-index: 9;
+
+    &::before {
+        @include before;
+        background-color: $black;
+        top: 50%;
+        z-index: -1;
+    }
+}
+
+.cta-banner-section-4 {
+    background-color: $theme-color;
+}
+
+.cta-banner-wrapper-3 {
+    @include flex;
+    justify-content: space-between;
+    background-color: $bg-color-2;
+    padding: 70px 80px;
+    position: relative;
+
+    @include breakpoint (max-xl){
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    @include breakpoint (max-md){
+        padding: 50px 40px;
+    }
+
+    @include breakpoint (max-sm){
+        padding: 40px 30px;
+    }
+
+    .dot-shape {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        img {
+            @include imgw;
+        }
+    }
+
+    .content {
+        position: relative;
+        z-index: 9;
+        
+        h2 {
+            color: $white;
+        }
+
+        .newsletter-items {
+            .form-clt {
+                position: relative;
+                margin-top: 40px;
+
+                input {
+                    border: 1px solid $white;
+                    width: 600px;
+                    padding: 25px 20px;
+                    background-color: transparent;
+                    border-radius: 5px;
+
+                    @include breakpoint (max-md){
+                       width: 450px;
+                       padding: 18px 20px;
+                    }
+
+                    @include breakpoint (max-sm){
+                        width: 480px;
+                    }
+
+                    @media screen and (max: 550px) {
+                        width: 400px;
+                    }
+
+                    @include breakpoint (max-xxs){
+                        width: 345px;
+                    }
+
+                    &::placeholder {
+                        color: $white;
+                    }
+                }
+
+                .theme-btn {
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    bottom: 10px;
+
+                    @include breakpoint (max-md){
+                        padding: 14px 18px;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
