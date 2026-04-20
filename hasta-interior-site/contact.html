@@ -374,7 +374,7 @@
                                 <div class="c-icon"><i class="fas fa-envelope"></i></div>
                                 <h4>Email Us</h4>
                                 <p><a href="mailto:hastainteriorstudio@gmail.com">hastainteriorstudio@gmail.com</a></p>
-                                <p style="margin-top:6px"><a href="mailto:jeevagreen75@gmail.com">jeevagreen75@gmail.com</a></p>
+                                <p style="margin-top:6px;font-size:12px;color:#999">We reply within 24 hours</p>
                             </div>
                         </div>
                         <!-- Social Media -->
@@ -411,12 +411,11 @@
                             </div>
 
                             <!--
-                                Formspree: Replace YOUR_FORM_ID below with your Formspree form ID.
-                                Sign up free at https://formspree.io → create form → copy ID.
-                                Example: action="https://formspree.io/f/xabc1234"
+                                Web3Forms: Free form service — routes submissions directly to hastainteriorstudio@gmail.com.
+                                No server required. Access key is tied to this email address.
                             -->
                             <form id="hasta-contact-form"
-                                  action="https://formspree.io/f/YOUR_FORM_ID"
+                                  action="https://api.web3forms.com/submit"
                                   method="POST"
                                   class="contact-form-items">
                                 <div class="row g-3">
@@ -455,10 +454,15 @@
                                             <textarea name="message" id="cf-message" placeholder="Briefly describe your project or requirements..." required></textarea>
                                         </div>
                                     </div>
-                                    <!-- Hidden honeypot for spam protection -->
-                                    <input type="text" name="_gotcha" style="display:none">
-                                    <!-- Redirect after submission -->
-                                    <input type="hidden" name="_next" value="https://hastainteriorstudio.com/contact.html?submitted=true">
+                                    <!-- Web3Forms config -->
+                                    <!-- TODO: Replace the access_key below with your real key from https://web3forms.com -->
+                                    <!-- Enter hastainteriorstudio@gmail.com on the site to get your free key instantly -->
+                                    <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
+                                    <input type="hidden" name="subject" value="New Lead – Hasta Interior Studio Website">
+                                    <input type="hidden" name="from_name" value="Hasta Interior Studio Website">
+                                    <input type="hidden" name="redirect" value="https://hastainteriorstudio.com/contact.html?submitted=true">
+                                    <!-- Honeypot spam protection -->
+                                    <input type="checkbox" name="botcheck" style="display:none">
                                     <!-- Submit -->
                                     <div class="col-lg-7 wow fadeInUp">
                                         <button type="submit" class="theme-btn padding-style" id="cf-submit">
@@ -614,44 +618,47 @@
         <script src="assets/js/gsap/ScrollSmoother.min.js"></script>
         <script src="assets/js/main.js"></script>
 
-        <!-- Formspree AJAX enhancement -->
+        <!-- Web3Forms AJAX enhancement — sends to hastainteriorstudio@gmail.com -->
         <script>
         (function(){
             var form = document.getElementById('hasta-contact-form');
             if (!form) return;
             form.addEventListener('submit', function(e) {
-                // Only intercept if Formspree ID has been configured
-                if (form.action.includes('YOUR_FORM_ID')) return; // let it fallback to native
                 e.preventDefault();
                 var btn = document.getElementById('cf-submit');
-                btn.textContent = 'Sending…';
+                var originalText = btn.innerHTML;
+                btn.innerHTML = 'Sending… <i class="fas fa-spinner fa-spin ms-1"></i>';
                 btn.disabled = true;
                 fetch(form.action, {
                     method: 'POST',
                     body: new FormData(form),
                     headers: { 'Accept': 'application/json' }
                 }).then(function(res) {
-                    if (res.ok) {
+                    return res.json();
+                }).then(function(data) {
+                    if (data.success) {
                         document.getElementById('form-success').style.display = 'block';
                         form.reset();
-                        btn.textContent = 'Message Sent ✓';
+                        btn.innerHTML = 'Message Sent ✓';
+                        // Scroll to success message
+                        document.getElementById('form-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
                     } else {
-                        btn.textContent = 'Send Message';
+                        btn.innerHTML = originalText;
                         btn.disabled = false;
-                        alert('There was a problem. Please try again or call us directly.');
+                        alert('There was a problem submitting the form. Please call us at +91 79041 23120 or WhatsApp us.');
                     }
                 }).catch(function() {
-                    btn.textContent = 'Send Message';
+                    btn.innerHTML = originalText;
                     btn.disabled = false;
                     alert('Network error. Please call +91 79041 23120.');
                 });
             });
+            // Show success msg if redirected back with ?submitted=true
+            if (window.location.search.includes('submitted=true')) {
+                var s = document.getElementById('form-success');
+                if (s) s.style.display = 'block';
+            }
         })();
-        // Show success msg if redirected back with ?submitted=true
-        if (window.location.search.includes('submitted=true')) {
-            var s = document.getElementById('form-success');
-            if (s) s.style.display = 'block';
-        }
         </script>
 
         <!-- Chat Widget -->
