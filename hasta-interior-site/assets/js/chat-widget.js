@@ -5,7 +5,7 @@
 (function () {
     'use strict';
 
-    var WA_NUMBER = '917904123120';
+    var WA_NUMBER = '9107904123120';
     var WA_BASE   = 'https://wa.me/' + WA_NUMBER;
 
     /* ── Lead data store ── */
