@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--<< Header Area >>-->
+    <head>
+        <!-- ========== Meta Tags ========== -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Hasta Interior Studio">
+        <meta name="description" content="Explore completed interior design projects across Coimbatore &amp; Tirupur — residential homes, modular kitchens, living rooms and more.">
+        <meta name="keywords" content="interior design projects Tamil Nadu, residential interior Avinashi, modular kitchen design Tirupur">
+        <!-- Open Graph -->
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Our Projects | Hasta Interior Studio">
+        <meta property="og:description" content="Browse our portfolio of beautiful interior design projects crafted for clients across Tamil Nadu.">
+        <!-- Page Title -->
+        <title>Our Projects | Interior Designers in Coimbatore &amp; Tirupur - Hasta Interior Studio</title>
+<link rel="canonical" href="https://hastainteriorstudio.in/projects">
+<meta name="robots" content="index, follow">
+<meta name="google-site-verification" content="x97Nn14yr_8z2dwI_wRK3VZFOpa_-wORRBkSjG6rxa8" />
+        <!--<< Favicon >>-->
+        <link rel="shortcut icon" href="IMG_5578.PNG" type="image/png">
+        <!--<< Bootstrap min.css >>-->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <!--<< Font Awesome 6 Free CDN >>-->
+    <link rel="stylesheet" href="assets/css/fontawesome.all.min.css">
+    <!--<< Flaticon CSS >>-->
+    <link rel="stylesheet" href="assets/css/flaticon.css">
+        <!--<< Animate.css >>-->
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <!--<< Splitting Animation.css >>-->
+        <link rel="stylesheet" href="assets/css/splitting.css">
+        <!--<< Magnific Popup.css >>-->
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <!--<< MeanMenu.css >>-->
+        <link rel="stylesheet" href="assets/css/meanmenu.css">
+        <!--<< Swiper Bundle.css >>-->
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+        <!--<< Nice Select.css >>-->
+        <link rel="stylesheet" href="assets/css/nice-select.css">
+        <!--<< Main.css >>-->
+        <link rel="stylesheet" href="assets/css/main.css">
+        <!--<< Style.css >>-->
+        <link rel="stylesheet" href="assets/css/style.css">
+        <!-- Poppins Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <!-- Chat Widget -->
+        <link rel="stylesheet" href="assets/css/chat-widget.css">
+
+        <style>
+            /* ── Projects page extras ── */
+            body, h1, h2, h3, h4, h5, h6, p, button, input, textarea, select, label {
+                font-family: 'Poppins', sans-serif !important;
+            }
+            h1, h2, h3, h4, h5, h6 { font-weight: 600 !important; }
+
+            /* Breadcrumb overlay */
+            .projects-breadcrumb {
+                position: relative;
+                background-size: cover;
+                background-position: center;
+            }
+            .projects-breadcrumb::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: rgba(10,10,10,0.58);
+                z-index: 0;
+            }
+            .projects-breadcrumb .container { position: relative; z-index: 1; }
+
+            /* ── Filter buttons ── */
+            .filter-bar {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                justify-content: center;
+                padding: 40px 0 20px;
+            }
+            .filter-btn {
+                background: transparent;
+                border: 1.5px solid #ddd;
+                color: #555;
+                font-size: 13px;
+                font-weight: 500;
+                padding: 8px 20px;
+                border-radius: 30px;
+                cursor: pointer;
+                transition: all .2s ease;
+                font-family: 'Poppins', sans-serif;
+            }
+            .filter-btn:hover,
+            .filter-btn.active {
+                background: #A6A182;
+                border-color: #A6A182;
+                color: #fff;
+            }
+
+            /* ── Portfolio grid ── */
+            .portfolio-section { padding: 20px 0 80px; }
+
+            .portfolio-items {
+                position: relative;
+                overflow: hidden;
+                border-radius: 4px;
+            }
+            .portfolio-image {
+                width: 100%;
+                height: 280px;
+                background-size: cover;
+                background-position: center;
+                position: relative;
+                transition: transform .4s ease;
+            }
+            .portfolio-items:hover .portfolio-image {
+                transform: scale(1.04);
+            }
+            .portfolio-image::after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(to top, rgba(10,10,10,.82) 0%, rgba(0,0,0,.1) 60%);
+                transition: opacity .3s ease;
+                opacity: 0;
+            }
+            .portfolio-items:hover .portfolio-image::after { opacity: 1; }
+
+            .portfolio-overlay {
+                position: absolute;
+                bottom: 0; left: 0; right: 0;
+                padding: 24px 20px 20px;
+                z-index: 2;
+                transform: translateY(10px);
+                opacity: 0;
+                transition: all .35s ease;
+            }
+            .portfolio-items:hover .portfolio-overlay {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            .portfolio-overlay .p-cat {
+                font-size: 11px;
+                font-weight: 500;
+                color: #A6A182;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                display: block;
+                margin-bottom: 4px;
+            }
+            .portfolio-overlay h3 {
+                font-size: 17px;
+                font-weight: 600 !important;
+                color: #fff;
+                margin: 0 0 4px;
+            }
+            .portfolio-overlay .p-loc {
+                font-size: 12px;
+                color: rgba(255,255,255,.75);
+            }
+            .portfolio-overlay .p-icon {
+                position: absolute;
+                top: 24px; right: 20px;
+                width: 36px; height: 36px;
+                background: #A6A182;
+                border-radius: 50%;
+                display: flex; align-items: center; justify-content: center;
+                color: #fff;
+                font-size: 14px;
+                transition: background .2s;
+                text-decoration: none;
+            }
+            .portfolio-overlay .p-icon:hover { background: #fff; color: #A6A182; }
+
+            /* Gallery items hidden by filter */
+            .portfolio-grid-item { transition: opacity .3s ease; }
+            .portfolio-grid-item.hidden { display: none; }
+
+            /* CTA strip */
+            .projects-cta {
+                background: #1a1a1a;
+                padding: 60px 0;
+                text-align: center;
+            }
+            .projects-cta h2 { color: #fff; margin-bottom: 16px; }
+            .projects-cta p { color: rgba(255,255,255,.7); margin-bottom: 28px; }
+
+            /* WhatsApp float  (shared widget replaces this) */
+        </style>
+
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://hastainteriorstudio.in/#business",
+  "name": "Hasta Interior Studio",
+  "image": "https://hastainteriorstudio.in/assets/img/logo/hasta-logo-black.png",
+  "url": "https://hastainteriorstudio.in/",
+  "telephone": "+919629639600",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "14/42, Rajaji Street, opp. to Government Hospital, Ganeshapuram",
+    "addressLocality": "Avinashi",
+    "addressRegion": "Tamil Nadu",
+    "postalCode": "641654",
+    "addressCountry": "IN"
+  },
+  "areaServed": [
+    "Avinashi",
+    "Coimbatore",
+    "Tirupur",
+    "Tamil Nadu"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "5"
+  },
+  "sameAs": [
+    "https://www.instagram.com/hasta_interiorstudio/",
+    "https://www.facebook.com/profile.php?id=61576407715360",
+    "https://www.youtube.com/@Hastainteriorstudio",
+    "https://www.threads.com/@hasta_interiorstudio"
+  ]
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://hastainteriorstudio.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Our Projects",
+      "item": "https://hastainteriorstudio.in/projects"
+    }
+  ]
+}</script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-296LSLMF7X"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-296LSLMF7X');
+</script>
+</head>
+
+    <body>
+
+        <!-- Back To Top Start -->
+        <div class="scroll-up">
+            <svg class="scroll-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+            </svg>
+        </div>
+
+        <!-- Preloader Start -->
+        <div id="preloader" class="preloader">
+            <div class="animation-preloader">
+                <div class="spinner"></div>
+                <div class="txt-loading" style="display:flex;align-items:center;justify-content:center;"><picture><source srcset="assets/img/logo/hasta-logo-white.png.webp" type="image/webp"><img src="assets/img/logo/hasta-logo-white.png" alt="Hasta Interior Studio" style="width:130px;object-fit:contain;animation:hw-dot-blink 1.4s infinite ease-in-out;" width="1628" height="1920"></picture></div>
+                <p class="text-center">For Aesthetic Living</p>
+            </div>
+            <div class="loader">
+                <div class="row">
+                    <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                    <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                    <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+                    <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Offcanvas Area Start -->
+        <div class="fix-area">
+            <div class="offcanvas__info">
+                <div class="offcanvas__wrapper">
+                    <div class="offcanvas__content">
+                        <div class="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
+                            <div class="offcanvas__logo">
+                                <a href="/">
+                                    <picture><source srcset="assets/img/logo/hasta-logo-white.png.webp" type="image/webp"><img src="assets/img/logo/hasta-logo-white.png" alt="Hasta Interior Studio" style="max-height:55px;" width="1628" height="1920"></picture>
+                                </a>
+                            </div>
+                            <div class="offcanvas__close">
+                                <button><i class="fas fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="mobile-menu fix mb-3"></div>
+                        <div class="offcanvas__contact">
+                            <h4>Contact Info</h4>
+                            <ul>
+                                <li class="d-flex align-items-center">
+                                    <div class="offcanvas__contact-icon"><i class="fas fa-location-dot"></i></div>
+                                    <div class="offcanvas__contact-text">
+                                        <a target="_blank" href="https://www.google.com/maps/place/?q=place_id:0x3ba9037933e06a09:0xbb7cc3ad6147c990">14/42, Rajaji Street, opp. to Government Hospital, Ganeshapuram, Avinashi, Tamil Nadu - 641654</a>
+                                    </div>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <div class="offcanvas__contact-icon mr-15"><i class="fas fa-envelope"></i></div>
+                                    <div class="offcanvas__contact-text">
+                                        <a href="mailto:hastainteriorstudio@gmail.com"><span>hastainteriorstudio@gmail.com</span></a>
+                                    </div>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <div class="offcanvas__contact-icon mr-15"><i class="fas fa-clock"></i></div>
+                                    <div class="offcanvas__contact-text">
+                                        <a href="#">Mon–Sat, 09am–06pm</a>
+                                    </div>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <div class="offcanvas__contact-icon mr-15"><i class="fas fa-phone"></i></div>
+                                    <div class="offcanvas__contact-text">
+                                        <a href="tel:+919629639600">+91 962 963 9600</a>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="header-button mt-4">
+                                <a href="/contact" class="theme-btn text-center">Get Consultation</a>
+                            </div>
+                            <div class="social-icon d-flex align-items-center"><a href="https://www.instagram.com/hasta_interiorstudio?igsh=NHQxajh0OGxuc2Zh" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a><a href="https://www.facebook.com/profile.php?id=61576407715360" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook-f"></i></a><a href="https://youtube.com/@hastainteriorstudio?si=CRhL6e0v29BCuqTJ" target="_blank" rel="noopener" title="YouTube"><i class="fab fa-youtube"></i></a><a href="https://www.threads.com/@hasta_interiorstudio" target="_blank" rel="noopener" title="Threads"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="1em" height="1em" fill="currentColor" style="vertical-align:middle;"><path d="M141.537 88.988c-.827-.394-1.667-.775-2.518-1.14-1.482-27.307-16.403-42.94-41.457-43.1h-.317c-14.985 0-27.449 6.396-35.12 17.036l13.779 9.452c5.73-8.695 14.724-10.548 21.347-10.548h.229c8.25.053 14.475 2.451 18.504 7.128 2.932 3.406 4.893 8.11 5.864 14.05-7.314-1.243-15.224-1.625-23.68-1.14-23.82 1.372-39.134 15.265-38.105 34.568.521 9.793 5.399 18.217 13.734 23.72 7.047 4.652 16.123 6.927 25.557 6.412 12.457-.683 22.23-5.436 29.048-14.127 5.178-6.6 8.453-15.153 9.899-25.93 5.937 3.583 10.337 8.298 12.767 13.966 4.132 9.635 4.373 25.468-8.546 38.376-11.319 11.308-24.925 16.2-45.487 16.351-22.81-.169-40.06-7.484-51.276-21.742C35.236 140.0 29.808 120.68 29.605 96c.203-24.683 5.63-43.967 16.133-57.318C56.954 24.424 74.204 17.11 97.013 16.94c22.975.171 40.526 7.521 52.171 21.847 5.71 7.026 10.015 15.861 12.853 26.163l16.147-4.308c-3.44-12.68-8.853-23.607-16.22-32.668C147.036 9.607 125.202.195 97.07 0H96.957C68.882.194 47.292 9.642 32.788 28.079 19.882 44.486 13.224 67.316 13 95.933L13 96l.001.068c.224 28.617 6.881 51.446 19.788 67.853C47.292 182.358 68.882 191.806 96.957 192h1.112c24.96-.173 42.554-6.708 57.048-21.189 18.963-18.945 18.392-42.692 12.142-57.27-4.484-10.454-13.033-18.945-24.723-24.553zM98.44 129.507c-10.44.588-21.286-4.098-21.82-14.135-.398-7.442 5.294-15.746 22.46-16.735 1.965-.113 3.894-.168 5.789-.168 6.235 0 12.068.606 17.371 1.765-1.978 24.702-13.416 28.713-23.8 29.273z"/></svg></a><a href="https://wa.me/919629639600" target="_blank" rel="noopener" title="WhatsApp"><i class="fab fa-whatsapp"></i></a><a href="mailto:hastainteriorstudio@gmail.com" title="Email"><i class="fas fa-envelope"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="offcanvas__overlay"></div>
+
+        <!-- Header Area Start -->
+        <header>
+            <div id="header-sticky" class="header-3">
+                <div class="container-fluid">
+                    <div class="mega-menu-wrapper">
+                        <div class="header-main">
+                            <div class="logo">
+                                <a href="/" class="header-logo-2">
+                                    <picture><source srcset="assets/img/logo/hasta-logo-black.png.webp" type="image/webp"><img src="assets/img/logo/hasta-logo-black.png" alt="Hasta Interior Studio" style="max-height:55px;" width="1628" height="1920"></picture>
+                                </a>
+                            </div>
+                            <div class="header-left">
+                                <div class="mean__menu-wrapper">
+                                    <div class="main-menu">
+                                        <nav id="mobile-menu">
+                                            <ul>
+                                                <li><a href="/">Home</a></li>
+                                                <li><a href="/about">About</a></li>
+                                                <li>
+                                                    <a href="/service">Services <i class="fas fa-angle-down"></i></a>
+                                                    <ul class="submenu">
+                                                        <li><a href="/service">All Services</a></li>
+                                                        <li><a href="/residential-interior">Residential Interior</a></li>
+                                                        <li><a href="/commercial-interior">Commercial Interior</a></li>
+                                                        <li><a href="/modular-kitchen">Modular Kitchen</a></li>
+                                                        <li><a href="/wardrobe-design">Wardrobe Design</a></li>
+                                                        <li><a href="/living-room-design">Living Room Design</a></li>
+                                                        <li><a href="/office-interiors">Office Interiors</a></li>
+                                                        <li><a href="/turnkey-solutions">Turnkey Solutions</a></li>
+                                                        <li><a href="/3d-design">3D Design</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="active"><a href="/projects">Projects</a></li>
+                                                <li><a href="/contact">Contact</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="header-right d-flex justify-content-end align-items-center">
+                                <div class="icon-items">
+                                    <div class="icon"><i class="fas fa-phone-flip"></i></div>
+                                    <div class="content">
+                                        <p>Call Now:</p>
+                                        <h4><a href="tel:+919629639600">+91 962 963 9600</a></h4>
+                                    </div>
+                                </div>
+                                <div class="header__hamburger d-xl-none my-auto">
+                                    <div class="sidebar__toggle"><i class="fas fa-bars"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Search Area Start -->
+        <div class="search-wrap">
+            <div class="search-inner">
+                <i class="fas fa-times search-close" id="search-close"></i>
+                <div class="search-cell">
+                    <form method="get">
+                        <div class="search-field-holder">
+                            <input type="search" class="main-search-input" placeholder="Search...">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="ScrollSmoother-content">
+
+            <!-- Breadcrumb -->
+            <div class="breadcrumb-wrapper projects-breadcrumb section-padding bg-cover" style="background-image: url('assets/img/contact-bg.jpg');">
+                <div class="container">
+                    <div class="page-heading">
+                        <h1 class="wow fadeInUp" data-wow-delay=".3s">Our Interior Design Projects in Coimbatore &amp; Tirupur</h1>
+                        <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
+                            <li><a href="/">Home</a></li>
+                            <li><i class="fas fa-chevron-right"></i></li>
+                            <li>Projects</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Portfolio Section -->
+            <section class="portfolio-section fix">
+                <div class="container">
+
+                    <!-- Section Title -->
+                    <div class="section-title text-center pt-5 pb-2 wow fadeInUp">
+                        <h6>Portfolio</h6>
+                        <h2 class="splt-txt wow" data-splitting>Spaces We Have <br> Transformed</h2>
+                        <p class="mt-3" style="max-width:560px;margin:0 auto;color:#666;">Every project is a unique story — shaped by our client's vision and brought to life through thoughtful design and skilled craftsmanship.</p>
+                    </div>
+
+                    <!-- Filter Bar -->
+                    <div class="filter-bar wow fadeInUp" data-wow-delay=".3s" id="filter-bar">
+                        <button class="filter-btn active" data-filter="all">All Projects</button>
+                        <button class="filter-btn" data-filter="residential">Residential</button>
+                        <button class="filter-btn" data-filter="living-room">Living Room</button>
+                        <button class="filter-btn" data-filter="bedroom">Bedroom</button>
+                        <button class="filter-btn" data-filter="kitchen">Kitchen</button>
+                        <button class="filter-btn" data-filter="commercial">Commercial</button>
+                    </div>
+
+                    <!-- Grid -->
+                    <div class="row g-3 pt-3" id="portfolio-grid">
+
+                        <!-- Project 01 -->
+                        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 portfolio-grid-item" data-category="residential">
+                            <div class="portfolio-items">
+                                <div class="portfolio-image bg-cover" style="background-image: url('project-images/IMG_4744.JPG.jpeg');"></div>
+                                <div class="portfolio-overlay">
+                                    <a href="/contact" class="p-icon"><i class="fas fa-arrow-right-long"></i></a>
+                                    <span class="p-cat">Residential</span>
+                                    <h3>Mr. Sundar Rajan Residence</h3>
+                                    <span class="p-loc"><i class="fas fa-location-dot me-1"></i>Aruppukottai</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 02 -->
+                        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 portfolio-grid-item" data-category="living-room">
+                            <div class="portfolio-items">
+                                <div class="portfolio-image bg-cover" style="background-image: url('project-images/IMG_4751.JPG.jpeg');"></div>
+                                <div class="portfolio-overlay">
+                                    <a href="/contact" class="p-icon"><i class="fas fa-arrow-right-long"></i></a>
+                                    <span class="p-cat">Living Room</span>
+                                    <h3>Modern Living Room Design</h3>
+                                    <span class="p-loc"><i class="fas fa-location-dot me-1"></i>Avinashi</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 03 -->
+                        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 portfolio-grid-item" data-category="bedroom">
+                            <div class="portfolio-items">
+                                <div class="portfolio-image bg-cover" style="background-image: url('project-images/IMG_4754.JPG.jpeg');"></div>
+                                <div class="portfolio-overlay">
+                                    <a href="/contact" class="p-icon"><i class="fas fa-arrow-right-long"></i></a>
+                                    <span class="p-cat">Bedroom</span>
+                                    <h3>Master Bedroom Suite</h3>
+                                    <span class="p-loc"><i class="fas fa-location-dot me-1"></i>Tirupur</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 04 -->
+                        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 portfolio-grid-item" data-category="kitchen">
+                            <div class="portfolio-items">
+                                <div class="portfolio-image bg-cover" style="background-image: url('project-images/IMG_4760.JPG.jpeg');"></div>
+                                <div class="portfolio-overlay">
+                                    <a href="/contact" class="p-icon"><i class="fas fa-arrow-right-long"></i></a>
+                                    <span class="p-cat">Kitchen</span>
+                                    <h3>Modular Kitchen Design</h3>
+                                    <span class="p-loc"><i class="fas fa-location-dot me-1"></i>Coimbatore</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 05 -->
+                        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 portfolio-grid-item" data-category="residential">
+                            <div class="portfolio-items">
+                                <div class="portfolio-image bg-cover" style="background-image: url('project-images/IMG_4762.JPG.jpeg');"></div>
+                                <div class="portfolio-overlay">
+                                    <a href="/contact" class="p-icon"><i class="fas fa-arrow-right-long"></i></a>
+                                    <span class="p-cat">Residential</span>
+                                    <h3>Individual House Interior</h3>
+                                    <span class="p-loc"><i class="fas fa-location-dot me-1"></i>Avinashi</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 06 -->
+                        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 portfolio-grid-item" data-category="living-room">
+                            <div class="portfolio-items">
+                                <div class="portfolio-image bg-cover" style="background-image: url('project-images/IMG_4771.JPG.jpeg');"></div>
+                                <div class="portfolio-overlay">
+                                    <a href="/contact" class="p-icon"><i class="fas fa-arrow-right-long"></i></a>
+                                    <span class="p-cat">Living Room</span>
+                                    <h3>Contemporary Living Space</h3>
+                                    <span class="p-loc"><i class="fas fa-location-dot me-1"></i>Tirupur</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 07 -->
+                        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 portfolio-grid-item" data-category="bedroom">
+                            <div class="portfolio-items">
+                                <div class="portfolio-image bg-cover" style="background-image: url('project-images/IMG_4772.JPG.jpeg');"></div>
+                                <div class="portfolio-overlay">
+                                    <a href="/contact" class="p-icon"><i class="fas fa-arrow-right-long"></i></a>
+                                    <span class="p-cat">Bedroom</span>
+                                    <h3>Bedroom Design</h3>
+                                    <span class="p-loc"><i class="fas fa-location-dot me-1"></i>Avinashi</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 08 -->
+                        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 portfolio-grid-item" data-category="residential">
+                            <div class="portfolio-items">
+                                <div class="portfolio-image bg-cover" style="background-image: url('project-images/IMG_4780.JPG.jpeg');"></div>
+                                <div class="portfolio-overlay">
+                                    <a href="/contact" class="p-icon"><i class="fas fa-arrow-right-long"></i></a>
+                                    <span class="p-cat">Residential</span>
+                                    <h3>Full Home Turnkey Design</h3>
+                                    <span class="p-loc"><i class="fas fa-location-dot me-1"></i>Erode</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 09 -->
+                        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 portfolio-grid-item" data-category="kitchen">
+                            <div class="portfolio-items">
+                                <div class="portfolio-image bg-cover" style="background-image: url('project-images/IMG_4792.JPG.jpeg');"></div>
+                                <div class="portfolio-overlay">
+                                    <a href="/contact" class="p-icon"><i class="fas fa-arrow-right-long"></i></a>
+                                    <span class="p-cat">Kitchen</span>
+                                    <h3>L-Shape Modular Kitchen</h3>
+                                    <span class="p-loc"><i class="fas fa-location-dot me-1"></i>Tirupur</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 10 -->
+                        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 portfolio-grid-item" data-category="residential">
+                            <div class="portfolio-items">
+                                <div class="portfolio-image bg-cover" style="background-image: url('project-images/IMG_4798.JPG.jpeg');"></div>
+                                <div class="portfolio-overlay">
+                                    <a href="/contact" class="p-icon"><i class="fas fa-arrow-right-long"></i></a>
+                                    <span class="p-cat">Residential</span>
+                                    <h3>Residence Interior Design</h3>
+                                    <span class="p-loc"><i class="fas fa-location-dot me-1"></i>Avinashi</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 11 -->
+                        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 portfolio-grid-item" data-category="bedroom">
+                            <div class="portfolio-items">
+                                <div class="portfolio-image bg-cover" style="background-image: url('project-images/IMG_4825.JPG.jpeg');"></div>
+                                <div class="portfolio-overlay">
+                                    <a href="/contact" class="p-icon"><i class="fas fa-arrow-right-long"></i></a>
+                                    <span class="p-cat">Bedroom</span>
+                                    <h3>Wardrobe &amp; Bedroom Suite</h3>
+                                    <span class="p-loc"><i class="fas fa-location-dot me-1"></i>Avinashi</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 12 -->
+                        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 portfolio-grid-item" data-category="living-room">
+                            <div class="portfolio-items">
+                                <div class="portfolio-image bg-cover" style="background-image: url('project-images/IMG_4847.JPG.jpeg');"></div>
+                                <div class="portfolio-overlay">
+                                    <a href="/contact" class="p-icon"><i class="fas fa-arrow-right-long"></i></a>
+                                    <span class="p-cat">Living Room</span>
+                                    <h3>Elegant Living Room</h3>
+                                    <span class="p-loc"><i class="fas fa-location-dot me-1"></i>Aruppukottai</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 13 -->
+                        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 portfolio-grid-item" data-category="residential">
+                            <div class="portfolio-items">
+                                <div class="portfolio-image bg-cover" style="background-image: url('project-images/IMG_4848.JPG.jpeg');"></div>
+                                <div class="portfolio-overlay">
+                                    <a href="/contact" class="p-icon"><i class="fas fa-arrow-right-long"></i></a>
+                                    <span class="p-cat">Residential</span>
+                                    <h3>Luxury Apartment Interior</h3>
+                                    <span class="p-loc"><i class="fas fa-location-dot me-1"></i>Tirupur</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 14 -->
+                        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 portfolio-grid-item" data-category="kitchen">
+                            <div class="portfolio-items">
+                                <div class="portfolio-image bg-cover" style="background-image: url('project-images/IMG_4849.JPG.jpeg');"></div>
+                                <div class="portfolio-overlay">
+                                    <a href="/contact" class="p-icon"><i class="fas fa-arrow-right-long"></i></a>
+                                    <span class="p-cat">Kitchen</span>
+                                    <h3>Island Kitchen Design</h3>
+                                    <span class="p-loc"><i class="fas fa-location-dot me-1"></i>Avinashi</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 15 -->
+                        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 portfolio-grid-item" data-category="living-room">
+                            <div class="portfolio-items">
+                                <div class="portfolio-image bg-cover" style="background-image: url('project-images/IMG_4853.JPG.jpeg');"></div>
+                                <div class="portfolio-overlay">
+                                    <a href="/contact" class="p-icon"><i class="fas fa-arrow-right-long"></i></a>
+                                    <span class="p-cat">Living Room</span>
+                                    <h3>Minimal Living Space</h3>
+                                    <span class="p-loc"><i class="fas fa-location-dot me-1"></i>Coimbatore</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 16 -->
+                        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 portfolio-grid-item" data-category="residential">
+                            <div class="portfolio-items">
+                                <div class="portfolio-image bg-cover" style="background-image: url('project-images/IMG_4874.JPG.jpeg');"></div>
+                                <div class="portfolio-overlay">
+                                    <a href="/contact" class="p-icon"><i class="fas fa-arrow-right-long"></i></a>
+                                    <span class="p-cat">Residential</span>
+                                    <h3>Home Interior Design</h3>
+                                    <span class="p-loc"><i class="fas fa-location-dot me-1"></i>Tirupur</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 17 -->
+                        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 portfolio-grid-item" data-category="bedroom">
+                            <div class="portfolio-items">
+                                <div class="portfolio-image bg-cover" style="background-image: url('project-images/IMG_4884.JPG.jpeg');"></div>
+                                <div class="portfolio-overlay">
+                                    <a href="/contact" class="p-icon"><i class="fas fa-arrow-right-long"></i></a>
+                                    <span class="p-cat">Bedroom</span>
+                                    <h3>Contemporary Bedroom Design</h3>
+                                    <span class="p-loc"><i class="fas fa-location-dot me-1"></i>Erode</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 18 -->
+                        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 portfolio-grid-item" data-category="residential">
+                            <div class="portfolio-items">
+                                <div class="portfolio-image bg-cover" style="background-image: url('project-images/IMG_4886.JPG.jpeg');"></div>
+                                <div class="portfolio-overlay">
+                                    <a href="/contact" class="p-icon"><i class="fas fa-arrow-right-long"></i></a>
+                                    <span class="p-cat">Residential</span>
+                                    <h3>Walk-in Wardrobe Design</h3>
+                                    <span class="p-loc"><i class="fas fa-location-dot me-1"></i>Tirupur</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 19 -->
+                        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 portfolio-grid-item" data-category="kitchen">
+                            <div class="portfolio-items">
+                                <div class="portfolio-image bg-cover" style="background-image: url('project-images/IMG_4889.JPG.jpeg');"></div>
+                                <div class="portfolio-overlay">
+                                    <a href="/contact" class="p-icon"><i class="fas fa-arrow-right-long"></i></a>
+                                    <span class="p-cat">Kitchen</span>
+                                    <h3>Compact Kitchen Makeover</h3>
+                                    <span class="p-loc"><i class="fas fa-location-dot me-1"></i>Avinashi</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 20 -->
+                        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 portfolio-grid-item" data-category="residential">
+                            <div class="portfolio-items">
+                                <div class="portfolio-image bg-cover" style="background-image: url('project-images/IMG_4908.JPG.jpeg');"></div>
+                                <div class="portfolio-overlay">
+                                    <a href="/contact" class="p-icon"><i class="fas fa-arrow-right-long"></i></a>
+                                    <span class="p-cat">Residential</span>
+                                    <h3>Premium Home Interior</h3>
+                                    <span class="p-loc"><i class="fas fa-location-dot me-1"></i>Coimbatore</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 21 -->
+                        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 portfolio-grid-item" data-category="living-room">
+                            <div class="portfolio-items">
+                                <div class="portfolio-image bg-cover" style="background-image: url('project-images/IMG_4909.JPG.jpeg');"></div>
+                                <div class="portfolio-overlay">
+                                    <a href="/contact" class="p-icon"><i class="fas fa-arrow-right-long"></i></a>
+                                    <span class="p-cat">Living Room</span>
+                                    <h3>Open-Plan Living Design</h3>
+                                    <span class="p-loc"><i class="fas fa-location-dot me-1"></i>Aruppukottai</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 22 -->
+                        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 portfolio-grid-item" data-category="bedroom">
+                            <div class="portfolio-items">
+                                <div class="portfolio-image bg-cover" style="background-image: url('project-images/IMG_4910.JPG.jpeg');"></div>
+                                <div class="portfolio-overlay">
+                                    <a href="/contact" class="p-icon"><i class="fas fa-arrow-right-long"></i></a>
+                                    <span class="p-cat">Bedroom</span>
+                                    <h3>Guest Bedroom Design</h3>
+                                    <span class="p-loc"><i class="fas fa-location-dot me-1"></i>Tirupur</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 23 -->
+                        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 portfolio-grid-item" data-category="residential">
+                            <div class="portfolio-items">
+                                <div class="portfolio-image bg-cover" style="background-image: url('project-images/IMG_4913.JPG.jpeg');"></div>
+                                <div class="portfolio-overlay">
+                                    <a href="/contact" class="p-icon"><i class="fas fa-arrow-right-long"></i></a>
+                                    <span class="p-cat">Residential</span>
+                                    <h3>Villa Interior Design</h3>
+                                    <span class="p-loc"><i class="fas fa-location-dot me-1"></i>Avinashi</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 24 -->
+                        <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 portfolio-grid-item" data-category="living-room">
+                            <div class="portfolio-items">
+                                <div class="portfolio-image bg-cover" style="background-image: url('project-images/IMG_4903.PNG');"></div>
+                                <div class="portfolio-overlay">
+                                    <a href="/contact" class="p-icon"><i class="fas fa-arrow-right-long"></i></a>
+                                    <span class="p-cat">Living Room</span>
+                                    <h3>Curated Living Room</h3>
+                                    <span class="p-loc"><i class="fas fa-location-dot me-1"></i>Avinashi</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!-- end row -->
+                </div><!-- end container -->
+            </section>
+
+            <!-- CTA Section -->
+            <section class="projects-cta wow fadeInUp">
+                <div class="container">
+                    <h2 class="splt-txt wow" data-splitting>Ready to Transform <br> Your Space?</h2>
+                    <p>Let's create something beautiful together. Get a free consultation from our design experts.</p>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <a href="/contact" class="theme-btn radius-none">
+                            Book Free Consultation <i class="fas fa-arrow-right-long ms-2"></i>
+                        </a>
+                        <a href="https://wa.me/919629639600?text=Hi%2C%20I%27m%20interested%20in%20a%20design%20consultation." target="_blank" class="theme-btn radius-none" style="background:#25D366;border-color:#25D366;">
+                            <i class="fab fa-whatsapp me-2"></i> WhatsApp Us
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer Section Start -->
+            <footer class="footer-section background-black">
+                <div class="shape-img-2">
+                    <picture><source srcset="assets/img/footer-shape-2.png.webp" type="image/webp"><img src="assets/img/footer-shape-2.png" alt="shape-img" width="373" height="395"></picture>
+                </div>
+                <div class="container">
+                    <div class="footer-widgets-wrapper style-2">
+                        <div class="row">
+                            <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                                <div class="single-footer-widget">
+                                    <div class="widget-head">
+                                        <a href="/">
+                                            <picture><source srcset="assets/img/logo/hasta-logo-white.png.webp" type="image/webp"><img src="assets/img/logo/hasta-logo-white.png" alt="Hasta Interior Studio" style="max-height:55px;" width="1628" height="1920"></picture>
+                                        </a>
+                                    </div>
+                                    <div class="footer-content">
+                                        <p>For Aesthetic Living — crafting beautiful interior spaces tailored to your lifestyle.</p>
+                                        <div class="social-icon d-flex align-items-center"><a href="https://www.instagram.com/hasta_interiorstudio?igsh=NHQxajh0OGxuc2Zh" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a><a href="https://www.facebook.com/profile.php?id=61576407715360" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook-f"></i></a><a href="https://youtube.com/@hastainteriorstudio?si=CRhL6e0v29BCuqTJ" target="_blank" rel="noopener" title="YouTube"><i class="fab fa-youtube"></i></a><a href="https://www.threads.com/@hasta_interiorstudio" target="_blank" rel="noopener" title="Threads"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="1em" height="1em" fill="currentColor" style="vertical-align:middle;"><path d="M141.537 88.988c-.827-.394-1.667-.775-2.518-1.14-1.482-27.307-16.403-42.94-41.457-43.1h-.317c-14.985 0-27.449 6.396-35.12 17.036l13.779 9.452c5.73-8.695 14.724-10.548 21.347-10.548h.229c8.25.053 14.475 2.451 18.504 7.128 2.932 3.406 4.893 8.11 5.864 14.05-7.314-1.243-15.224-1.625-23.68-1.14-23.82 1.372-39.134 15.265-38.105 34.568.521 9.793 5.399 18.217 13.734 23.72 7.047 4.652 16.123 6.927 25.557 6.412 12.457-.683 22.23-5.436 29.048-14.127 5.178-6.6 8.453-15.153 9.899-25.93 5.937 3.583 10.337 8.298 12.767 13.966 4.132 9.635 4.373 25.468-8.546 38.376-11.319 11.308-24.925 16.2-45.487 16.351-22.81-.169-40.06-7.484-51.276-21.742C35.236 140.0 29.808 120.68 29.605 96c.203-24.683 5.63-43.967 16.133-57.318C56.954 24.424 74.204 17.11 97.013 16.94c22.975.171 40.526 7.521 52.171 21.847 5.71 7.026 10.015 15.861 12.853 26.163l16.147-4.308c-3.44-12.68-8.853-23.607-16.22-32.668C147.036 9.607 125.202.195 97.07 0H96.957C68.882.194 47.292 9.642 32.788 28.079 19.882 44.486 13.224 67.316 13 95.933L13 96l.001.068c.224 28.617 6.881 51.446 19.788 67.853C47.292 182.358 68.882 191.806 96.957 192h1.112c24.96-.173 42.554-6.708 57.048-21.189 18.963-18.945 18.392-42.692 12.142-57.27-4.484-10.454-13.033-18.945-24.723-24.553zM98.44 129.507c-10.44.588-21.286-4.098-21.82-14.135-.398-7.442 5.294-15.746 22.46-16.735 1.965-.113 3.894-.168 5.789-.168 6.235 0 12.068.606 17.371 1.765-1.978 24.702-13.416 28.713-23.8 29.273z"/></svg></a><a href="https://wa.me/919629639600" target="_blank" rel="noopener" title="WhatsApp"><i class="fab fa-whatsapp"></i></a><a href="mailto:hastainteriorstudio@gmail.com" title="Email"><i class="fas fa-envelope"></i></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 ps-lg-2 wow fadeInUp" data-wow-delay=".5s">
+                                <div class="single-footer-widget">
+                                    <div class="widget-head"><h3>Service Menu</h3></div>
+                                    <ul class="list-items">
+                                        <li><a href="/service"><i class="fas fa-chevron-right"></i> Residential Interior Design</a></li>
+                                        <li><a href="/service"><i class="fas fa-chevron-right"></i> Commercial Interior Design</a></li>
+                                        <li><a href="/service"><i class="fas fa-chevron-right"></i> Modular Kitchen Design</a></li>
+                                        <li><a href="/service"><i class="fas fa-chevron-right"></i> Turnkey Interior Solutions</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-lg-4 ps-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".7s">
+                                <div class="single-footer-widget">
+                                    <div class="widget-head"><h3>Quick Links</h3></div>
+                                    <ul class="list-items">
+                                        <li><a href="/"><i class="fas fa-chevron-right"></i> Home</a></li>
+                                        <li><a href="/about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                                        <li><a href="/projects"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                                        <li><a href="/contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-6 ps-lg-5 wow fadeInUp" data-wow-delay=".9s">
+                                <div class="single-footer-widget">
+                                    <div class="widget-head"><h3>Contact Us</h3></div>
+                                    <div class="footer-content">
+                                        <p><i class="fas fa-location-dot me-2"></i>14/42, Rajaji Street, opp. to Government Hospital, Ganeshapuram, Avinashi, Tamil Nadu - 641654</p>
+                                        <p class="mt-2"><i class="fas fa-phone me-2"></i><a href="tel:+919629639600" style="color:inherit">+91 962 963 9600</a></p>
+                                        <p class="mt-2"><i class="fas fa-envelope me-2"></i><a href="mailto:hastainteriorstudio@gmail.com" style="color:inherit">hastainteriorstudio@gmail.com</a></p>
+                                        <div class="header-button mt-3">
+                                            <a href="tel:+919629639600" class="theme-btn border-radius-none">
+                                                Call Now <i class="fas fa-phone-flip ms-2"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom style-2">
+                    <div class="container">
+                        <div class="footer-wrapper border-style d-flex align-items-center justify-content-between">
+                            <p class="wow fadeInLeft color-2" data-wow-delay=".3s">
+                                © <a href="/">Hasta Interior Studio</a> 2025 | All Rights Reserved
+                            </p>
+                            <ul class="footer-menu wow fadeInRight" data-wow-delay=".5s">
+                                <li><a href="/contact">Terms &amp; Conditions</a></li>
+                                <li><a href="/contact">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div><!-- end ScrollSmoother-content -->
+
+        <!--<< All JS Plugins >>-->
+        <script src="assets/js/jquery-3.7.1.min.js"></script>
+        <script src="assets/js/viewport.jquery.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/jquery.nice-select.min.js"></script>
+        <script src="assets/js/jquery.waypoints.js"></script>
+        <script src="assets/js/jquery.counterup.min.js"></script>
+        <script src="assets/js/swiper-bundle.min.js"></script>
+        <script src="assets/js/jquery.meanmenu.min.js"></script>
+        <script src="assets/js/splitting.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/wow.min.js"></script>
+        <script src="assets/js/splitting-animation.js"></script>
+        <script src="assets/js/gsap/gsap.min.js"></script>
+        <script src="assets/js/gsap/ScrollTrigger.min.js"></script>
+        <script src="assets/js/gsap/ScrollSmoother.min.js"></script>
+        <script src="assets/js/main.js"></script>
+
+        <!-- Portfolio Filter -->
+        <script>
+        (function(){
+            var btns = document.querySelectorAll('.filter-btn');
+            var items = document.querySelectorAll('.portfolio-grid-item');
+            btns.forEach(function(btn){
+                btn.addEventListener('click', function(){
+                    btns.forEach(function(b){ b.classList.remove('active'); });
+                    btn.classList.add('active');
+                    var filter = btn.getAttribute('data-filter');
+                    items.forEach(function(item){
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.classList.remove('hidden');
+                        } else {
+                            item.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        })();
+        </script>
+
+        <!-- Chat Widget -->
+        <script src="assets/js/chat-widget.js"></script>
+
+</body>
+</html>

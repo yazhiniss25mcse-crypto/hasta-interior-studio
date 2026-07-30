@@ -1,0 +1,493 @@
+.work-process-items {
+    margin-top: 30px;
+    padding: 40px;
+    background-color: $white;
+    box-shadow: $shadow;
+    position: relative;
+    z-index: 9;
+    border-radius: 5px;
+
+    @include breakpoint (max-sm){
+       padding: 30px;
+    }
+
+    &::before {
+        @include before;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url(../../assets/img/process-bg.jpg);
+        z-index: -1;
+        border-radius: 5px;
+        opacity: 0;
+        visibility: hidden;
+        @include transition;
+    }
+
+    &::after {
+        @include before;
+        background-color: $black;
+        z-index: -1;
+        opacity: .7;
+        border-radius: 5px;
+        opacity: 0;
+        visibility: hidden;
+        @include transition;
+    }
+
+    h6 {
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: $black;
+        -webkit-text-fill-color: transparent;
+        font-weight: 700;
+        font-size: 48px;
+        opacity: .2;
+        margin-bottom: 40px;
+        display: inline-block;
+        line-height: 1;
+        @include transition;
+
+        @include breakpoint (max-sm){
+            margin-bottom: 20px;
+        }
+    }
+
+    h3 {
+        margin-bottom: 20px;
+        border-bottom: 2px solid $border-color;
+        padding-bottom: 20px;
+    }
+
+    .icon {
+        margin-top: 25px;
+        @include transition;
+        position: relative;
+        z-index: 9;
+        font-size: 48px;
+        color: $black;
+
+        @include breakpoint (max-sm){
+           margin-top: 15px;
+        }
+    }
+
+    &:hover {
+        h6 {
+            -webkit-text-stroke-color: $white;
+            opacity: 1;
+        }
+
+        h3 {
+            border-bottom: 2px solid rgba(230, 230, 230, .5);
+        }
+
+        h3,p {
+            color: $white;
+        }
+
+        .icon {
+            color: $white;
+        }
+
+        &::before,&::after {
+            opacity: .7;
+            visibility: visible;
+        }
+    }
+
+    &.active {
+        h6 {
+            -webkit-text-stroke-color: $white;
+            opacity: 1;
+        }
+
+        h3 {
+            border-bottom: 2px solid rgba(230, 230, 230, .5);
+        }
+
+        h3,p {
+            color: $white;
+        }
+
+        .icon {
+            color: $white;
+        }
+
+        &::before,&::after {
+            opacity: .7;
+            visibility: visible;
+        }
+    }
+}
+
+.achievement-section {
+    position: relative;
+
+    .shape-left {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        opacity: .1;
+    }
+}
+
+.achievement-wrapper {
+    position: relative;
+    z-index: 9;
+    
+    .achievement-content {
+        .about-button {
+            margin-top: 40px;
+        }
+    }
+
+    .counter-area {
+        margin-left: 40px;
+
+        @include breakpoint (max-xl){
+            margin-left: 0;
+        }
+
+        .counter-item {
+            background-color: $white;
+            text-align: center;
+            padding: 30px;
+
+            .icon {
+                color: $theme-color;
+                font-size: 48px;
+            }
+
+            .content {
+                margin-top: 20px;
+
+                h2 {
+                    font-size: 48px;
+                    color: $header-color;
+                    margin-bottom: 5px;
+
+                    @include breakpoint (max-md){
+                        font-size: 36px;
+                    }
+
+                    @include breakpoint (max-sm){
+                        font-size: 32px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.cta-video-wrapper {
+    padding: 230px 0;
+    margin: 0 120px;
+    position: relative;
+
+    @include breakpoint (max-xxl){
+        padding: 210px 0;
+    }
+
+    @include breakpoint (max-xl){
+        margin: 0;
+        padding: 190px 0;
+    }
+
+    @include breakpoint (max-lg){
+        padding: 150px 0;
+    }
+
+    @include breakpoint (max-md){
+        padding: 100px 0;
+    }
+
+    @include breakpoint (max-sm){
+        padding: 80px 0;
+    }
+
+    &::before {
+        @include before;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2))
+    }
+
+    .video-box {
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+        z-index: 9;
+
+        .video-btn {
+            width: 115px;
+            height: 115px;
+            line-height: 115px;
+            text-align: center;
+            background-color: $theme-color;
+            display: inline-block;
+            border-radius: 50%;
+            font-size: 28px;
+            color: $white;
+
+            @include breakpoint (max-md){
+                width: 80px;
+                height: 80px;
+                line-height: 80px;
+                font-size: 20px;
+            }
+
+            @include breakpoint (max-sm){
+                width: 70px;
+                height: 70px;
+                line-height: 70px;
+                font-size: 18px;
+            }
+        }
+
+        .ripple {
+            @include breakpoint (max-md){
+               &::before,&::after {
+                    width: 80px;
+                    height: 80px;
+               }
+            }
+
+            @include breakpoint (max-sm){
+                &::before,&::after {
+                     width: 70px;
+                     height: 70px;
+                }
+             }
+        }
+    }
+}
+
+.work-process-wrapper {
+    .section-title {
+        h2 {
+            font-size: 68px;
+
+            @include breakpoint (max-xxl){
+                font-size: 62px;
+            }
+
+            @include breakpoint (max-xl){
+                font-size: 58px;
+            }
+
+            @include breakpoint (max-lg){
+                font-size: 48px;
+            }
+
+            @include breakpoint (max-md){
+                font-size: 42px;
+            }
+
+            @include breakpoint (max-sm){
+                font-size: 32px;
+            }
+
+            span {
+                font-size: 68px;
+                font-weight: 700;
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: $white;
+                -webkit-text-fill-color: transparent;
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: var(--white);
+                -webkit-text-fill-color: transparent;
+
+                @include breakpoint (max-xxl){
+                    font-size: 62px;
+                }
+    
+                @include breakpoint (max-xl){
+                    font-size: 58px;
+                }
+    
+                @include breakpoint (max-lg){
+                    font-size: 48px;
+                }
+
+                @include breakpoint (max-md){
+                    font-size: 42px;
+                }
+
+                @include breakpoint (max-sm){
+                    font-size: 32px;
+                }
+            }
+        }
+    }
+
+    .work-process-items-2 {
+        margin-top: 30px;
+
+        .work-process-content {
+            position: relative;
+
+            h3 {
+                color: $white;
+                border-bottom: 1px solid $text-color;
+                padding-bottom: 30px;
+            }
+
+            .number {
+                font-weight: 700;
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: $white;
+                -webkit-text-fill-color: transparent;
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: $white;
+                -webkit-text-fill-color: transparent;
+                font-size: 68px;
+                opacity: .2;
+                position: absolute;
+                top: -30px;
+                right: 0;
+
+                @include breakpoint (max-sm){
+                    font-size: 48px;
+                    top: -20px;
+                }
+            }
+
+            p {
+                padding-top: 30px;
+                color: $white;
+
+                @include breakpoint (max-sm){
+                    padding-top: 20px;
+                }
+            }
+        }
+    }
+
+    &.style-2 {
+        .section-title {
+            h2 {
+                color: $header-color !important;
+            }
+        }
+
+        .work-process-items-2 {
+            margin-top: 30px;
+    
+            .work-process-content {
+                position: relative;
+    
+                h3 {
+                    color: $header-color;
+                }
+    
+                .number {
+                    -webkit-text-stroke-color: $black;
+                }
+    
+                p {
+                    color: $text-color;
+                }
+            }
+        }
+    }
+}
+
+.counter-wrapper {
+    margin-top: -30px;
+
+    @include breakpoint (max-xl){
+        margin-top: -80px;
+    }
+
+    @include breakpoint (max-lg){
+        margin-top: -100px;
+    }
+    
+    .counter-box-items {
+        padding: 30px 20px;
+        text-align: center;
+        background-color: $white;
+        box-shadow: $shadow;
+
+        @include breakpoint (max-sm){
+           padding: 20px;
+        }
+        
+    }
+}
+
+.counter-items {
+    @include flex;
+    gap: 40px;
+
+    @include breakpoint (max-md){
+        display: inline;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .icon {
+        width: 80px;
+        line-height: 90px;
+        height: 80px;
+        background-color: $theme-color;
+        color: $white;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 38px;
+
+        @include breakpoint (max-md){
+            text-align: center;
+            margin: 0 auto;
+            width: 70px;
+            height: 70px;
+            line-height: 80px;
+        }
+
+        @include breakpoint (max-sm){
+            width: 60px;
+            height: 60px;
+            line-height: 75px;
+        }
+    }
+
+    .content {
+        border-left: 1px solid $black;
+        padding-left: 20px;
+
+        @include breakpoint (max-md){
+            padding-left: 0;
+            margin-top: 30px;
+            border: none;
+        }
+
+        p {
+            color: $black;
+        }
+    }
+}
+
+.counter-wrapper-2 {
+    padding: 60px 50px;
+
+    .counter-items-2 {
+        @include flex;
+        gap: 40px;
+
+        .icon {
+            font-size: 60px;
+            color: $theme-color;
+        }
+
+        .content {
+            border-left: 1px solid rgba(255, 255, 255, .1);
+            padding-left: 25px;
+
+            h2 {
+                color: $white;
+                margin-bottom: 5px;
+            }
+
+            p {
+                color: $white;
+            }
+        }
+    }
+}

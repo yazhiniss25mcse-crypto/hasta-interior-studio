@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hastainteriorstudio.in/sitemap.xml

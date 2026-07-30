@@ -1,0 +1,402 @@
+.testimonial-wrapper {
+    position: relative;
+    margin-top: 30px;
+    display: inline-block;
+
+    @include breakpoint (max-lg){
+        width: 100%;
+    }
+
+    .array-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        @include breakpoint (max-xl){
+           display: none;
+        }
+
+        .array-prev {
+            background-color: transparent;
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            line-height: 50px;
+            border: 1px solid $border-color;
+            color: $header-color;
+            font-weight: bold;
+
+            &:hover {
+                background-color: $theme-color;
+                color: $white;
+                border: 1px solid transparent;
+            }
+        }
+
+        .array-next {
+            background-color: transparent;
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            line-height: 50px;
+            border: 1px solid $theme-color;
+            color: $theme-color;
+            font-weight: bold;
+            
+            &:hover {
+                background-color: $theme-color;
+                color: $white;
+            }
+        }
+    }
+
+    .testimonial-image {
+        height: 534px;
+        width: 850px;
+        border-radius: 5px;
+
+        @include breakpoint (max-xl){
+           width: 600px;
+        }
+
+        @include breakpoint (max-lg){
+            width: initial;
+            max-width: 850px;
+        }
+
+        @include breakpoint (max-md){
+           height: 480px;
+        }
+
+        @include breakpoint (max-sm){
+            height: 430px;
+         }
+    }
+
+    .testimonial-area {
+        max-width: 670px;
+    }
+
+    .testimonial-items {
+        padding: 60px;
+        background-color: $white;
+        border-radius: 5px;
+        position: relative;
+        z-index: 9;
+
+        @include breakpoint (max-md){
+           padding: 40px 30px;
+        }
+
+        .icon {
+            position: absolute;
+            top: 60px;
+            right: 60px;
+            font-size: 48px;
+            color: $theme-color;
+
+            @include breakpoint (max-md){
+               top: 50px;
+               right: 50px;
+            }
+
+            @include breakpoint (max-sm){
+                top: 40px;
+                right: 20px;
+                font-size: 38px;
+            }
+        }
+
+        .client-items {
+            @include flex;
+            gap: 20px;
+
+            .client-image {
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+            }
+
+            .client-content {
+                h3 {
+                    margin-bottom: 5px;
+                }
+            }
+        }
+
+        .star {
+            margin-top: 30px;
+
+            @include breakpoint (max-sm){
+              margin-top: 20px;
+            }
+
+            i {
+                color: $ratting-color;
+            }
+
+            .text-color {
+                color: #E6E6E6;
+            }
+        }
+
+        p {
+            font-size: 18px;
+            margin-top: 20px;
+
+            @include breakpoint (max-sm){
+                margin-top: 15px;
+                font-size: 16px;
+            }
+        }
+    }
+
+    &.style-2 {
+        position: relative;
+
+        .testimonial-image {
+            height: 393px;
+            margin-top: -160px;
+            width: 960px;
+
+            @include breakpoint (max-lg){
+                max-width: 960px;
+                margin-top: 0;
+                width: initial;
+            }
+        }
+
+        .testimonial-area {
+           padding-top: 110px;
+           max-width: 740px;
+           margin-left: -100px;
+
+            @include breakpoint (max-lg){
+               padding-top: 0;
+               margin-left: 0;
+            }
+        }
+
+        .testimonial-items {
+            background-color: $black;
+            border-radius: 0;
+            position: relative;
+
+            &::before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 45px;
+                height: 45px;
+                content: "";
+                background-color: $theme-color;
+                opacity: 0.5;
+            }
+            
+            h4 {
+                color: $white;
+                font-weight: 400;
+                line-height: 145%;
+                font-size: 18px;
+
+                @include breakpoint (max-sm){
+                    font-size: 16px;
+                }
+            }
+
+            .client-content {
+                margin-top: 30px;
+
+                h3 {
+                    color: $white;
+                    margin-bottom: 5px;
+                }
+
+                span {
+                   color: $white;
+                   font-weight: 400;
+                }
+            }
+
+            .icon {
+                bottom: 55px;
+                right: 60px;
+                top: initial;
+                opacity: 0.5;
+            }
+        }
+
+        .array-button {
+            position: absolute;
+            bottom: -88%;
+            left: 55%;
+            transform: translateX(-50%);
+            gap: 0;
+            
+            .array-prev {
+                color: $black;
+                border-radius: 0;
+
+                &:hover {
+                    background-color: $theme-color;
+                    color: $white;
+                }
+            }
+
+            .array-next {
+                background-color: $theme-color;
+                color: $white;
+                border-radius: 0;
+
+                &:hover {
+                    background-color: $black;
+                }
+            }
+        }
+
+        &::before {
+            position: absolute;
+            bottom: 25px;
+            left: 0;
+            height: 1px;
+            width: 350px;
+            content: "";
+            background-color: $theme-color;
+        }
+    }
+}
+
+.testimonial-wrapper-2 {
+    position: relative;
+
+    .testimonial-image {
+        max-width: 630px;
+        height: 507px;
+
+        @include breakpoint (max-md){
+           height: 480px;
+        }
+
+        @include breakpoint (max-sm){
+            height: 430px;
+        }
+    }
+
+    .testimonial-content {
+        padding: 0 90px;
+        position: relative;
+        z-index: 9;
+
+        @include breakpoint (max-xl){
+            padding: 0 40px;
+        }
+
+        @include breakpoint (max-lg){
+            padding: 0;
+        }
+
+        .client-info {
+            margin-bottom: 30px;
+
+            @include breakpoint (max-sm){
+                margin-bottom: 20px;
+            }
+
+            h3 {
+                color: $white;
+                margin-bottom: 5px;
+            }
+
+            span {
+                color: $white;
+            }
+        }
+
+        p {
+            color: $white;
+            font-size: 18px;
+        }
+
+        .social-icon {
+            padding: 10px 35px;
+            border-radius: 5px;
+            border: 1px solid rgba(255, 255, 255, .2);
+            display: inline-block;
+            margin-top: 30px;
+
+            a {
+                color: $white;
+
+                &:hover {
+                    color: $theme-color;
+                }
+            }
+        }
+    }
+    
+    .array-button {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+        @include breakpoint (max-md){
+            display: none;
+        }
+
+        .array-prev {
+            background-color: transparent;
+            color: $theme-color !important;
+            border: 1px solid $theme-color;
+
+            i {
+                color: $theme-color;
+            }
+      
+            &:hover {
+              background-color: $theme-color;
+              color: $white;
+            }
+        }
+      
+        .array-next {
+            background-color: transparent;
+            color: $white;
+            border: 1px solid $white;
+
+            i {
+                color: $theme-color;
+                @include transition;
+            }
+
+            &:hover {
+                background-color: $theme-color;
+                border: 1px solid transparent;
+
+                i {
+                    color: $white;
+                }
+            }
+        }
+    }      
+}
+
+.testimonial-section-5 {
+    position: relative;
+
+    &::before {
+        @include before;
+        background-color: $bg-color-2;
+        left: 45%;
+
+        @include breakpoint (max-lg){
+            display: none;
+        }
+    }
+
+    .frame-shape {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+}
